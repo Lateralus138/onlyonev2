@@ -1,0 +1,9 @@
+Package: onlyone
+Version: 2.0.0
+Section: Utilities
+Priority: optional
+Architecture: amd64
+Essential: no
+Installed-Size: 184
+Maintainer: https://github.com/Lateralus138/onlyonev2
+Description: Get unique lines from a file, piped stdin, or passed arguments in the command line.

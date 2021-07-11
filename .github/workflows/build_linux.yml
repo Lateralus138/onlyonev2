@@ -1,0 +1,88 @@
+name: Linux Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+# on:
+#   push:
+#     paths:
+#       - '**.cpp'
+#       - '**.h'
+#       - '**.sln'
+#       - 'makefile'
+
+jobs:
+  build_linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Make Linux
+      run: |
+        rm -rf ./release/linux/dynamic/onlyone 2>/dev/null
+        rm -rf ./release 2>/dev/null
+        make
+        chmod 755 ./release/linux/dynamic/onlyone
+        mkdir -p  ./debian/onlyone/usr/bin/
+        cp -f ./release/linux/dynamic/onlyone ./debian/onlyone/usr/bin/
+        [[ -f "./debian/onlyone/usr/bin/.nomedia" ]] &&
+        rm -f "./debian/onlyone/usr/bin/.nomedia"
+        onlyone_linux_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "onlyone MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "linux"\n}'
+        if ! [[ -d "./docs/json" ]]; then
+          mkdir -p ./docs/json
+        fi
+        if ! [[ -f "./docs/json/onlyone_linux_md5.json" ]]; then
+          touch ./docs/json/onlyone_linux_md5.json
+        fi
+        echo -e "$onlyone_linux_md5_text" > ./docs/json/onlyone_linux_md5.json
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ./release/linux/dynamic/onlyone | cut -d' ' -f 1)\"/g" docs/json/onlyone_linux_md5.json
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Built Linux Binary
+        add_options: '--force'
+        push_options: '--force'
+    - uses: actions/checkout@v2
+    - uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: True
+        tag: 2.0.0
+        name: Stable Release
+        prerelease: True
+        artifacts: "./release/linux/dynamic/onlyone"
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/checkout@v2
+    - name: Make Debian
+      run: |
+        rm -rf ./debian/onlyone.deb 2>/dev/null
+        rm -rf ./debian/onlyone/usr/bin/onlyone 2>/dev/null
+        mkdir -p ./debian/onlyone/usr/bin/
+        cp -f ./release/linux/dynamic/onlyone ./debian/onlyone/usr/bin/
+        cd debian
+        dpkg-deb --build onlyone
+        cd ../
+        onlyone_debian_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "onlyone.deb MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "debian"\n}'
+        if ! [[ -d "docs/json" ]]; then
+          mkdir -p docs/json
+        fi
+        if ! [[ -f "docs/json/onlyone_debian_md5.json" ]]; then
+          touch docs/json/onlyone_debian_md5.json
+        fi
+        echo -e "$onlyone_debian_md5_text" > ./docs/json/onlyone_debian_md5.json
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum debian/onlyone.deb | cut -d' ' -f 1)\"/g" docs/json/onlyone_debian_md5.json
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Built Debian
+        add_options: '--force'
+        push_options: '--force'
+    - uses: actions/checkout@v2
+    - uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: True
+        tag: 2.0.0
+        name: Stable Release
+        prerelease: False
+        artifacts: "./debian/onlyone.deb"
+        token: ${{ secrets.GITHUB_TOKEN }}

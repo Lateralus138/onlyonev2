@@ -1,0 +1,7 @@
+onlyone_list=(
+  -h --help
+  -i --insensitive
+  -f --file
+)
+complete -W "$(printf '%s\n' "${onlyone_list[@]}")" onlyone
+

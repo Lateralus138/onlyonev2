@@ -1,0 +1,54 @@
+name: MacOs Build
+
+on:
+  workflow_run:
+    workflows:
+      - Windows Build
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Make MacOs
+      run: |
+        if [[ -f "./release/macos/dynamic/onlyone" ]]; then
+          rm -f "./release/macos/dynamic/onlyone"
+        fi
+        if [[ -f "./release/macos/dynamic/onlyone.macos" ]]; then
+          rm -f "./release/macos/dynamic/onlyone.macos"
+        fi
+        if [[ -d "./release/macos/dynamic/" ]]; then
+          rm -rf "./release/macos/dynamic/"
+        fi
+        mkdir -p ./src/{lib,include}
+        make macos
+        mv "./release/macos/dynamic/onlyone" "./release/macos/dynamic/onlyone.macos"
+
+        chmod 755 ./release/macos/dynamic/onlyone.macos
+        md5 ./release/macos/dynamic/onlyone.macos
+        onlyone_macos_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "onlyone.macos MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "macos"\n}'
+        if ! [[ -d "docs/json" ]]; then
+          mkdir -p docs/json
+        fi
+        if ! [[ -f "./docs/json/onlyone_macos_md5.json" ]]; then
+          touch ./docs/json/onlyone_macos_md5.json
+        fi
+        echo -e "$onlyone_macos_md5_text" > ./docs/json/onlyone_macos_md5.json
+        sed -i '' "s/\"message\": \".*\"/\"message\": \"$(md5 ./release/macos/dynamic/onlyone.macos | cut -d' ' -f 4)\"/g" ./docs/json/onlyone_macos_md5.json
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Built MacOs Binary
+        add_options: '--force'
+        push_options: '--force'
+    - uses: actions/checkout@v2
+    - uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: True
+        tag: 2.0.0
+        name: Stable Release
+        prerelease: False
+        artifacts: "./release/macos/dynamic/onlyone.macos"
+        token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,46 @@
+name: Android Build
+
+on:
+  workflow_run:
+    workflows:
+      - Linux Build
+    types:
+      - completed
+
+jobs:
+  build_android:
+    name: Build Android
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Make Android
+      run: |
+        rm -rf ./release/android/static/onlyone 2>/dev/null
+        rm -rf ./release/android/static/ 2>/dev/null
+        sudo apt install g++-arm-linux-gnueabi -y
+        make androidstatic
+        mv ./release/android/static/onlyone ./release/android/static/onlyone.arm
+        chmod 755 ./release/android/static/onlyone.arm
+        onlyone_android_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "onlyone.arm MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "android"\n}'
+        if ! [[ -d "docs/json" ]]; then
+          mkdir -p docs/json
+        fi
+        if ! [[ -f "./docs/json/onlyone_android_md5.json" ]]; then
+          touch ./docs/json/onlyone_android_md5.json
+        fi
+        echo -e "$onlyone_android_md5_text" > ./docs/json/onlyone_android_md5.json
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ./release/android/static/onlyone.arm | cut -d' ' -f 1)\"/g" ./docs/json/onlyone_android_md5.json
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Built Android
+        add_options: '--force'
+        push_options: '--force'
+    - uses: actions/checkout@v2
+    - uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: True
+        tag: 2.0.0
+        name: Stable Release
+        prerelease: False
+        artifacts: "./release/android/static/onlyone.arm"
+        token: ${{ secrets.GITHUB_TOKEN }}

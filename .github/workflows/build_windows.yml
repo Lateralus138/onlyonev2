@@ -1,0 +1,82 @@
+name: Windows Build
+
+on:
+  workflow_run:
+    workflows:
+      - Android Build
+    types:
+      - completed
+
+jobs:
+
+  build_windows:
+    name: Build Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: microsoft/setup-msbuild@v1.0.2
+      - name: Make Windows
+        run: |
+          Remove-Item -Path '.\source\onlyone\source\Build\x86\onlyone-x86.exe' -ErrorAction SilentlyContinue
+          Remove-Item -Path '.\source\onlyone\source\Build\x64\onlyone-x64.exe' -ErrorAction SilentlyContinue
+          msbuild "source\onlyone.sln" /p:OutDir="source\Build\x86\" /p:Configuration=Release /p:Platform=x86
+          Move-Item -Path '.\source\onlyone\source\Build\x86\onlyone.exe' -Destination '.\source\onlyone\source\Build\x86\onlyone-x86.exe'
+          msbuild "source\onlyone.sln" /p:OutDir="source\Build\x64\" /p:Configuration=Release /p:Platform=x64
+          Move-Item -Path '.\source\onlyone\source\Build\x64\onlyone.exe' -Destination '.\source\onlyone\source\Build\x64\onlyone-x64.exe'
+          Remove-Item -Force -Path '.\source\onlyone\Release\onlyone.iobj' -ErrorAction SilentlyContinue
+          Remove-Item -Force -Path '.\source\onlyone\Release\onlyone.ipdb' -ErrorAction SilentlyContinue
+          Remove-Item -Force -Path '.\source\onlyone\Release\onlyone.obj' -ErrorAction SilentlyContinue
+          Remove-Item -Force -Path '.\source\onlyone\Release\onlyone.tlog\link.write.1.tlog' -ErrorAction SilentlyContinue
+          Remove-Item -Force -Path '.\source\onlyone\Release\vc142.pdb' -ErrorAction SilentlyContinue
+          Remove-Item -Force -Path '.\source\onlyone\source\Build\x64\onlyone.pdb' -ErrorAction SilentlyContinue
+          Remove-Item -Force -Path '.\source\onlyone\source\Build\x86\onlyone.pdb' -ErrorAction SilentlyContinue
+          Remove-Item -Force -Path '.\source\onlyone\x64\Release\onlyone.iobj' -ErrorAction SilentlyContinue
+          Remove-Item -Force -Path '.\source\onlyone\x64\Release\onlyone.ipdb' -ErrorAction SilentlyContinue
+          Remove-Item -Force -Path '.\source\onlyone\x64\Release\onlyone.tlog\link.write.1.tlog' -ErrorAction SilentlyContinue
+          $onlyone_x86_md5_text = @'
+          {
+            "schemaVersion": 1,
+            "color": "2E9778",
+            "label": "onlyone-x86.exe MD5",
+            "message": "PLACEHOLDER",
+            "labelColor": "1d1d1d",
+            "style": "for-the-badge",
+            "namedLogo": "windows"
+          }
+          '@
+          New-Item -ItemType Directory -Force -Path '.\docs\json'
+          Write-Output "$onlyone_x86_md5_text" > .\docs\json\onlyone_x86_md5.json
+          $file = ".\docs\json\onlyone_x86_md5.json"
+          $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+          $hash = [System.BitConverter]::ToString($md5.ComputeHash([System.IO.File]::ReadAllBytes("source/onlyone/source/Build/x86/onlyone-x86.exe")))
+          ((Get-Content -path $file -Raw) -replace 'PLACEHOLDER',$hash) | Set-Content -Path "$file"
+          $onlyone_x64_md5_text = @'
+          {
+            "schemaVersion": 1,
+            "color": "2E9778",
+            "label": "onlyone-x64.exe MD5",
+            "message": "PLACEHOLDER",
+            "labelColor": "1d1d1d",
+            "style": "for-the-badge",
+            "namedLogo": "windows"
+          }
+          '@
+          Write-Output "$onlyone_x64_md5_text" > .\docs\json\onlyone_x64_md5.json
+          $file = ".\docs\json\onlyone_x64_md5.json"
+          $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+          $hash = [System.BitConverter]::ToString($md5.ComputeHash([System.IO.File]::ReadAllBytes("source/onlyone/source/Build/x64/onlyone-x64.exe")))
+          ((Get-Content -path $file -Raw) -replace 'PLACEHOLDER',$hash) | Set-Content -Path "$file"
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Built Windows
+          add_options: '--force'
+          push_options: '--force'
+      - uses: actions/checkout@v2
+      - uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: True
+          tag: 2.0.0
+          name: Stable Release
+          prerelease: False
+          artifacts: "source\\onlyone\\source\\Build\\x86\\onlyone-x86.exe,source\\onlyone\\source\\Build\\x64\\onlyone-x64.exe"
+          token: ${{ secrets.GITHUB_TOKEN }}
