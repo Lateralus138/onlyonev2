@@ -16,4 +16,5 @@ bool valueInVectorString
 
 std::vector<std::string> cinToVector (bool skip_empty);
 
+
 #endif
