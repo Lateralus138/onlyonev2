@@ -11,7 +11,7 @@ int main (int argc, char *argv[])
 {
   std::vector<std::string> argv_copy, argv_uniq;
   bool case_insensitive = false;
-	if (!isatty(fileno(stdin))) argv_copy = cinToVector ();
+	if (!isatty(fileno(stdin))) argv_copy = cinToVector (true);
   if (argc > 1)
   {
     auto skip = false;

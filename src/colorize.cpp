@@ -1,9 +1,7 @@
-#ifndef COLORIZE_H_INCLUDE
-#define COLORIZE_H_INCLUDE
-
+#include "colorize.h"
 #include <iostream>
 
-inline void colorize_transform (std::string & str, int clrs[], int csize)
+void colorize_transform (std::string & str, int clrs[], int csize)
 {
 	std::string clrstr = "\x1b[";
 	for (auto index = 0; index < csize; index++)
@@ -15,7 +13,7 @@ inline void colorize_transform (std::string & str, int clrs[], int csize)
 	str = clrstr + str + "\x1b[0m";
 }
 
-inline std::string colorize (std::string str, int clrs[], int csize)
+std::string colorize (std::string str, int clrs[], int csize)
 {
 	std::string clrstr = "\x1b[";
 	for (auto index = 0; index < csize; index++)
@@ -26,6 +24,3 @@ inline std::string colorize (std::string str, int clrs[], int csize)
 	clrstr.push_back ('m');
 	return clrstr + str +"\x1b[0m";
 }
-
-
-#endif
