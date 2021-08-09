@@ -75,7 +75,7 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           allowUpdates: True
-          tag: 2.0.0
+          tag: 2.0.1628484483
           name: Stable Release
           prerelease: False
           artifacts: "source\\onlyone\\source\\Build\\x86\\onlyone-x86.exe,source\\onlyone\\source\\Build\\x64\\onlyone-x64.exe"

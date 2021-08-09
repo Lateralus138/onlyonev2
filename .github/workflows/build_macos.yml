@@ -47,7 +47,7 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         allowUpdates: True
-        tag: 2.0.0
+        tag: 2.0.1628484483
         name: Stable Release
         prerelease: False
         artifacts: "./release/macos/dynamic/onlyone.macos"
