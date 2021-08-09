@@ -3,5 +3,5 @@ onlyone_list=(
   -i --insensitive
   -f --file
 )
-complete -W "$(printf '%s\n' "${onlyone_list[@]}")" onlyone
-
+onlyone_list="$(printf '%s\n' "${onlyone_list[@]}")"
+complete -W "${onlyone_list}" onlyone
