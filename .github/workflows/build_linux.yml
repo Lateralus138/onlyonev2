@@ -1,17 +1,17 @@
 name: Linux Build
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
 # on:
 #   push:
-#     paths:
-#       - '**.cpp'
-#       - '**.h'
-#       - '**.sln'
-#       - 'makefile'
+#     branches: [ master ]
+#   pull_request:
+#     branches: [ master ]
+on:
+  push:
+    paths:
+      - '**.cpp'
+      - '**.h'
+      - '**.sln'
+      - 'makefile'
 
 jobs:
   build_linux:
