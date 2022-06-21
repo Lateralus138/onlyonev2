@@ -15,7 +15,7 @@ Get unique lines from a file, piped stdin, or passed arguments in the command li
 - [OnlyOne V2](#onlyone-v2)
   - [Description](#description)
   - [Table Of Contents](#table-of-contents)
-  - [Consider Donating](#consider-donating)
+  - [Support Me If You Like](#support-me-if-you-like)
   - [About](#about)
     - [Version 2](#version-2)
       - [Reason For V2](#reason-for-v2)
@@ -39,7 +39,7 @@ Get unique lines from a file, piped stdin, or passed arguments in the command li
 
 ---
 
-## Consider Donating
+## Support Me If You Like
 
 If you like this project and care to donate to my ***PayPal***:
 
