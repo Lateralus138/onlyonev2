@@ -15,6 +15,7 @@ Get unique lines from a file, piped stdin, or passed arguments in the command li
 - [OnlyOne V2](#onlyone-v2)
   - [Description](#description)
   - [Table Of Contents](#table-of-contents)
+  - [Consider Donating](#consider-donating)
   - [About](#about)
     - [Version 2](#version-2)
       - [Reason For V2](#reason-for-v2)
@@ -34,8 +35,19 @@ Get unique lines from a file, piped stdin, or passed arguments in the command li
     - [Logo](#logo)
     - [Help Screen](#help-screen)
     - [Silly Example](#silly-example)
-  - [Consider Donating](#consider-donating)
   - [LICENSE](#license)
+
+---
+
+## Consider Donating
+
+If you like this project and care to donate to my ***PayPal***:
+
+[![PayPal Donation](docs/media/images/paypal_donate_button.png)](https://paypal.me/ianapride?locale.x=en_US)
+
+Or ***Buy Me A Coffee*** if your prefer:
+
+[![Buy Me A Coffee](./docs/media/images/buymeacoffe_a.png)](https://www.buymeacoffee.com/ianalanpride)
 
 ---
 
@@ -281,14 +293,6 @@ This is in the *Windows* executables and is installed with the *hicolor* theme w
 ### Silly Example
 
 ![Silly Example](./docs/media/images/onlyone_silly_win_examples.png)
-
----
-
-## Consider Donating
-
-If you like this project and/or just care to donate you can donate to my *PayPal*:
-
-[![PayPal Donate](./docs/media/images/paypal_donate_button.png)](https://paypal.me/ianapride?locale.x=en_US)
 
 ---
 

@@ -1,0 +1,7 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/flux/git/onlyonev2'
+rm -rf release/linux/dynamic
+mkdir -p release/linux/dynamic
+g++-9 -O2 -std=c++17 -Isrc/include -Lsrc/lib src/main.cpp -o release/linux/dynamic/onlyone
+make: Leaving directory '/home/flux/git/onlyonev2'
+ 

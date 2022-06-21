@@ -1,0 +1,598 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Mon Jun 20 23:51:45 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = plasma
+# default
+.SHELLFLAGS := -c
+# makefile (from 'makefile', line 50)
+INCDIR = $(SRCDIR)/include
+# environment
+XDG_SESSION_CLASS = user
+# environment
+_fzf_orig_completion_ln = complete -F %s ln #_longopt
+# makefile (from 'makefile', line 12)
+MACRELDIR = $(RELDIR)/macos
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# makefile (from 'makefile', line 60)
+CF_STATIC = -static -static-libgcc -static-libstdc++
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'makefile', line 56)
+SRC = $(SRCNAM).$(SRCEXT)
+# makefile (from 'makefile', line 38)
+MACDBGSTTDIR = $(MACDBGDIR)/static
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /tmp/xauth-1000-_0
+# automatic
+@F = $(notdir $@)
+# default
+MAKE_VERSION := 4.2.1
+# makefile
+CURDIR := /home/flux/git/onlyonev2
+# makefile
+SHELL = /bin/sh
+# makefile (from 'makefile', line 23)
+LINTSTSTTDIR = $(LINTSTDIR)/static
+# environment
+MANPAGER = most
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/code
+# environment
+QT_AUTO_SCREEN_SCALE_FACTOR = 0
+# makefile (from 'makefile', line 2)
+ACC = arm-linux-gnueabi-g++-9
+# environment
+_fzf_orig_completion_less = complete -F %s less #_longopt
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-plasma:/etc/xdg
+# makefile (from 'makefile', line 8)
+RELDIR = release
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+MANDATORY_PATH = /usr/share/gconf/plasma.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/plasma:/home/flux/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+XCURSOR_SIZE = 32
+# environment
+_fzf_orig_completion_uniq = complete -F %s uniq #_longopt
+# makefile (from 'makefile', line 54)
+SRCNAM = main
+# makefile (from 'makefile', line 64)
+CF_REL = -O2 -std=c++17
+# environment
+KDED_STARTED_BY_KDEINIT = 1
+# makefile (from 'makefile', line 14)
+LINDBGDIR = $(DBGDIR)/linux
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /home/flux/git
+# environment
+PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+# environment
+_fzf_orig_completion_tail = complete -F %s tail #_longopt
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/flux/bin:/home/flux/bin/platform-tools:/home/flux/.cargo/bin:/home/flux/Applications:/home/flux/.local/bin:/home/flux/android-studio/bin:/home/flux/.bash/profile/scripts:/home/flux/.cargo/bin:/home/flux/mingw32/bin:/home/flux/.npm/bin:/home/flux/android-studio/bin:/home/flux/android-studio:/home/flux/Android/Sdk/cmdline-tools/latest/bin:/home/flux/Android/Sdk/tools:/home/flux/Android/Sdk/tools/bin:/home/flux/Android/Sdk/platform-tools:/home/flux/bin:/home/flux/bin/platform-tools:/home/flux/.cargo/bin:/home/flux/Applications:/home/flux/.local/bin:/home/flux/android-studio/bin:/home/flux/.bash/profile/scripts:/home/flux/.cargo/bin:/home/flux/mingw32/bin:/home/flux/.npm/bin:/home/flux/android-studio/bin:/home/flux/android-studio:/home/flux/Android/Sdk/cmdline-tools/latest/bin:/home/flux/Android/Sdk/tools:/home/flux/Android/Sdk/tools/bin:/home/flux/Android/Sdk/platform-tools:/home/flux/.fzf/bin
+# makefile (from 'makefile', line 46)
+MACRELDYNDIR = $(MACRELDIR)/dynamic
+# makefile (from 'makefile', line 62)
+CF_DBG = -g -Wall -Wextra -fsanitize=leak -fsanitize=address -std=c++17
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+XCURSOR_THEME = GoogleDot-Black
+# makefile (from 'makefile', line 15)
+ANDDBGDIR = $(DBGDIR)/android
+# environment
+SESSION_MANAGER = local/Inferno2:@/tmp/.ICE-unix/2305,unix/Inferno2:/tmp/.ICE-unix/2305
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# makefile (from 'makefile', line 22)
+LINTSTDYNDIR = $(LINTSTDIR)/dynamic
+# environment
+_fzf_orig_completion_tee = complete -F %s tee #_longopt
+# environment
+LASTBASHSHELL = 17797
+# environment
+_fzf_orig_completion_cd = complete -o nospace -F %s cd #_cd
+# makefile (from 'makefile', line 20)
+MACTSTDIR = $(TSTDIR)/macos
+# environment
+_fzf_orig_completion_awk = complete -F %s awk #_longopt
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from 'makefile', line 58)
+SRCPTH = $(SRCDIR)/$(SRC)
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'makefile', line 47)
+MACRELSTTDIR = $(MACRELDIR)/static
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# makefile (from 'makefile', line 67)
+CF_AND_STATIC = $(CF_AND) $(CF_STATIC)
+# environment
+XDG_SESSION_DESKTOP = KDE
+# environment
+SSH_AUTH_SOCK = /tmp/ssh-nBFtHPtM2b9E/agent.1791
+# makefile (from 'makefile', line 4)
+SRCDIR = src
+# environment
+SHELLECT_SHELLS = [{"shellName":"Bash","shellCmd":"/bin/bash"},{"shellName":"Node","shellCmd":"/usr/bin/node"},{"shellName":"Python","shellCmd":"/usr/bin/python3"},{"shellName":"zsh","shellCmd":"/usr/bin/zsh"},{"shellName":"PowerShell","shellCmd":"/usr/bin/pwshw"},{"shellName":"UniShells","shellCmd":"/home/flux/unishellsc"},{"shellName":"Zellij","shellCmd":"/home/flux/.local/bin/zellij"}]
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+_fzf_orig_completion_rm = complete -F %s rm #_longopt
+# environment
+_fzf_orig_completion_telnet = complete -F %s telnet #_known_hosts
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from 'makefile', line 10)
+LINRELDIR = $(RELDIR)/linux
+# environment
+PWD = /home/flux/git/onlyonev2
+# makefile (from 'makefile', line 31)
+LINDBGDYNDIR = $(LINDBGDIR)/dynamic
+# environment
+KDE_SESSION_VERSION = 5
+# default
+.LOADED := 
+# environment
+XDG_SEAT = seat0
+# environment
+_fzf_orig_completion_diff = complete -F %s diff #_longopt
+# environment
+SSH_AGENT_PID = 2245
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = KDE
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+MANPATH = /usr/local/man:/usr/local/share/man:/usr/share/man:/usr/man
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/flux
+# environment
+_fzf_orig_completion_cat = complete -F %s cat #_longopt
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# makefile (from 'makefile', line 34)
+ANDDBGDYNDIR = $(ANDDBGDIR)/dynamic
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/flux/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+# environment
+LOGNAME = flux
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+_fzf_orig_completion_rmdir = complete -F %s rmdir #_longopt
+# environment
+KDE_FULL_SESSION = true
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XDG_VTNR = 1
+# environment
+MAKELEVEL := 0
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 3
+# makefile (from 'makefile', line 32)
+LINDBGSTTDIR = $(LINDBGDIR)/static
+# makefile (from 'makefile', line 1)
+CC = g++-9
+# makefile (from 'makefile', line 11)
+ANDRELDIR = $(RELDIR)/android
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e00ffca3-8224-4d76-9a25-633fd823bd5d.sock
+# environment
+XDG_SESSION_ID = 3
+# makefile (from 'makefile', line 43)
+ANDRELDYNDIR = $(ANDRELDIR)/dynamic
+# environment
+USER = flux
+# makefile
+.DEFAULT_GOAL := main
+# environment
+XDG_CURRENT_DESKTOP = KDE
+# makefile (from 'makefile', line 6)
+TSTDIR = test
+# makefile (from 'makefile', line 35)
+ANDDBGSTTDIR = $(ANDDBGDIR)/static
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+_fzf_orig_completion_du = complete -F %s du #_longopt
+# makefile (from 'makefile', line 66)
+CF_AND = $(CF_REL) -march=armv8-a
+# environment
+HYPER_CLI = 1
+# default
+MAKE_COMMAND := make
+# environment
+SHELLECT_COLORS = true
+# environment
+_fzf_orig_completion_ftp = complete -F %s ftp #_known_hosts
+# environment
+OLDPWD = bench-cli
+# makefile (from 'makefile', line 49)
+LIBDIR = $(SRCDIR)/lib
+# environment
+TERM_PROGRAM = Hyper
+# default
+.VARIABLES := 
+# makefile (from 'makefile', line 69)
+TSTARG = --help
+# automatic
+*F = $(notdir $*)
+# makefile (from 'makefile', line 16)
+MACDBGDIR = $(DBGDIR)/macos
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-d4bb65f5-1.68.1-main.sock
+# environment
+_fzf_orig_completion_ld = complete -F %s ld #_longopt
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 3.2.3
+# environment
+_fzf_orig_completion_head = complete -F %s head #_longopt
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# makefile (from 'makefile', line 41)
+LINRELSTTDIR = $(LINRELDIR)/static
+# automatic
++F = $(notdir $+)
+# environment
+NO_AT_BRIDGE = 1
+# makefile (from 'makefile', line 55)
+SRCEXT = cpp
+# environment
+QT_ACCESSIBILITY = 1
+ 
+# environment
+PYTHONSTARTUP = /home/flux/.python/functions.py
+# environment
+DEFAULTS_PATH = /usr/share/gconf/plasma.default.path
+# default
+MAKEFILES := 
+# environment
+PROMPT_COMMAND = PROMPT_COMMAND
+# automatic
+<F = $(notdir $<)
+# environment
+_fzf_orig_completion_wc = complete -F %s wc #_longopt
+# environment
+BASH_LOADED = 1
+# environment
+PS1 =  \[$lblue\]ᗛ\[$lgreen\]⦗\u⦘\[$lblue\]@\[$lyellow\]⦗${PWD}⦘\[$lblue\]ᗘ\[$clr_reset\] 
+# makefile (from 'makefile', line 52)
+BIN = onlyone
+# makefile (from 'makefile', line 18)
+LINTSTDIR = $(TSTDIR)/linux
+# environment
+_fzf_orig_completion_mv = complete -F %s mv #_longopt
+# environment
+LC_ALL = C
+# environment
+_fzf_orig_completion_cp = complete -F %s cp #_longopt
+# makefile (from 'makefile', line 63)
+CF_DBG_STATIC = -g -Wall -Wextra $(CF_STATIC) -std=c++17
+# environment
+_fzf_orig_completion_ls = complete -F %s ls #_longopt
+# automatic
+^F = $(notdir $^)
+# makefile (from 'makefile', line 40)
+LINRELDYNDIR = $(LINRELDIR)/dynamic
+# default
+SUFFIXES := 
+# environment
+_fzf_orig_completion_pushd = complete -o nospace -F %s pushd #_cd
+# makefile (from 'makefile', line 19)
+ANDTSTDIR = $(TSTDIR)/android
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# makefile (from 'makefile', line 37)
+MACDBGDYNDIR = $(MACDBGDIR)/dynamic
+# makefile (from 'makefile', line 44)
+ANDRELSTTDIR = $(ANDRELDIR)/static
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+_fzf_orig_completion_sed = complete -F %s sed #_longopt
+# default
+.RECIPEPREFIX := 
+# environment
+define FZF_DEFAULT_OPTS
+
+--color=dark
+--color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
+--color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
+--prompt=" 🅵 🅻 🆄 🆇  💾 >"
+
+endef
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+_fzf_orig_completion_grep = complete -F %s grep #_longopt
+# environment
+SETCONSOLETITLE = TRUE
+# makefile (from 'makefile', line 65)
+CF_REL_STATIC = -O2 $(CF_STATIC) -std=c++17
+# environment
+VSCODE_PID = 35084
+# makefile (from 'makefile', line 7)
+DBGDIR = debug
+# environment
+SETSHORTPATH = TRUE
+# environment
+_fzf_orig_completion_sort = complete -F %s sort #_longopt
+# environment
+KDE_SESSION_UID = 1000
+# environment
+PS2 = \[${lyellow}\] ... ᗓ\[${clr_reset}\] 
+# variable set hash-table stats:
+# Load=186/1024=18%, Rehash=0, Collisions=26/233=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2053, inode 11809209): 15 files, no impossibilities.
+
+# 15 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+debugmacos:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 122):
+	rm -rf $(MACDBGDYNDIR)
+	mkdir -p $(MACDBGDYNDIR)
+	$(CC) $(CF_DBG) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(MACDBGDYNDIR)/$(BIN)
+
+installstatic: static
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 171):
+	cp -f "$(LINRELSTTDIR)/$(BIN)" "/usr/bin/$(BIN)"
+
+debug:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 102):
+	rm -rf $(LINDBGDYNDIR)
+	mkdir -p $(LINDBGDYNDIR)
+	$(CC) $(CF_DBG) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(LINDBGDYNDIR)/$(BIN)
+
+test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 132):
+	rm -rf $(LINTSTDYNDIR)
+	mkdir -p $(LINTSTDYNDIR)
+	$(CC) $(CF_DBG) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(LINTSTDYNDIR)/$(BIN)
+	./$(LINTSTDYNDIR)/$(BIN) $(TSTARG)
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-10-06 21:27:49.795842082
+#  File has been updated.
+#  Successfully updated.
+
+android: src/main.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 82):
+	rm -rf $(ANDRELDYNDIR)
+	mkdir -p $(ANDRELDYNDIR)
+	$(ACC) $(CF_AND) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(ANDRELDYNDIR)/$(BIN)
+
+debugmacosstatic:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 127):
+	rm -rf $(MACDBGSTTDIR)
+	mkdir -p $(MACDBGSTTDIR)
+	$(CC) $(CF_DBG_STATIC) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(MACDBGSTTDIR)/$(BIN)
+
+static: src/main.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 77):
+	rm -rf $(LINRELSTTDIR)
+	mkdir -p $(LINRELSTTDIR)
+	$(CC) $(CF_REL_STATIC) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(LINRELSTTDIR)/$(BIN)
+
+debugstatic:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 107):
+	rm -rf $(LINDBGSTTDIR)
+	mkdir -p $(LINDBGSTTDIR)
+	$(CC) $(CF_DBG_STATIC) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(LINDBGSTTDIR)/$(BIN)
+
+androidstatic: src/main.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 87):
+	rm -rf $(ANDRELSTTDIR)
+	mkdir -p $(ANDRELSTTDIR)
+	$(ACC) $(CF_AND_STATIC) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(ANDRELSTTDIR)/$(BIN)
+
+teststatic:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 138):
+	rm -rf $(LINTSTSTTDIR)
+	mkdir -p $(LINTSTSTTDIR)
+	$(CC) $(CF_DBG_STATIC) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(LINTSTSTTDIR)/$(BIN)
+	./$(LINTSTSTTDIR)/$(BIN) $(TSTARG)
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 174):
+	rm -rf $(RELDIR)
+	rm -rf $(TSTDIR)
+	rm -rf $(DBGDIR)
+
+# Not a target:
+src/main.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+debugandroid:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 112):
+	rm -rf $(ANDDBGDYNDIR)
+	mkdir -p $(ANDDBGDYNDIR)
+	$(ACC) $(CF_AND) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(ANDDBGDYNDIR)/$(BIN)
+
+main: src/main.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 72):
+	rm -rf $(LINRELDYNDIR)
+	mkdir -p $(LINRELDYNDIR)
+	$(CC) $(CF_REL) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(LINRELDYNDIR)/$(BIN)
+
+debugandroidstatic:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 117):
+	rm -rf $(ANDDBGSTTDIR)
+	mkdir -p $(ANDDBGSTTDIR)
+	$(ACC) $(CF_AND_STATIC) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(ANDDBGSTTDIR)/$(BIN)
+
+macos:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 92):
+	rm -rf $(MACRELDYNDIR)
+	mkdir -p $(MACRELDYNDIR)
+	$(CC) $(CF_REL) -I$(INCDIR) -L$(LIBDIR) $(SRCPTH) -o $(MACRELDYNDIR)/$(BIN)
+
+install: main
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 168):
+	cp -f "$(LINRELDYNDIR)/$(BIN)" "/usr/bin/$(BIN)"
+
+# files hash-table stats:
+# Load=21/1024=2%, Rehash=0, Collisions=0/37=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 37 / storage = 340 B / avg = 9 B
+# current buf: size = 8162 B / used = 340 B / count = 37 / avg = 9 B
+
+# strcache performance: lookups = 62 / hit rate = 40%
+# hash-table stats:
+# Load=37/8192=0%, Rehash=0, Collisions=1/62=2%
+# Finished Make data base on Mon Jun 20 23:51:45 2022
+
+ 
